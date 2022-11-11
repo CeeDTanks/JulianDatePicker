@@ -1,0 +1,69 @@
+
+<body style ="font-size: xxx-large">
+<label for="start">Select date:</label>
+
+<input type="date" id="start" name="CalenderDate" style ="font-size: xxx-large">
+</input>
+<div id="julDate"> The Julian Date is :</div>
+
+</body>
+<script> 
+
+const selectElement = document.querySelector('input[type="date"]');
+
+selectElement.addEventListener('change', (event) => {
+  var x = event.target.value;
+  var year = parseInt(x.slice(2,4));
+  var month = parseInt(x.slice(5,7));
+  var day = parseInt(x.slice(8,10));
+  var leapYear = year % 4 == 0 ? 1 : 0;
+  switch (month){
+    case 1:
+      break;
+    case 2:
+      day = day + 31;
+      break;
+    case 3:
+      day = day + 59 + leapYear;
+      break;
+    case 4:
+      day = day + 90 + leapYear;
+      break;
+    case 5:
+      day = day + 120 + leapYear;
+      break;
+    case 6:
+      day = day + 151 + leapYear;
+      break;
+    case 7:
+      day = day + 181 + leapYear;
+      break;
+    case 8:
+      day = day + 212 + leapYear;
+      break;
+    case 9:
+      day = day + 243 + leapYear;
+      break;
+    case 10:
+      day = day + 273 + leapYear;
+      break;
+    case 11:
+      day = day + 304 + leapYear;
+      break;
+    case 12:
+      day = day + 334 + leapYear;
+      break;
+  }
+  if(day<10){
+    day = '00' + day;
+  }
+  else if (day < 100){
+    day = '0' + day;
+  }
+  else{
+    day = '' + day;
+  }
+  document.getElementById("julDate").innerHTML = `The Julian Date is : ${x.slice(2,4)}${day}`;
+});
+
+</script>
