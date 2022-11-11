@@ -4,7 +4,7 @@
 
 <input type="date" id="start" name="CalenderDate" style ="font-size: x-large">
 </input>
-<div id="julDate"> The Julian Date is :</div>
+<div id="julDate">Julian Date:</div>
 
 </body>
 <script> 
@@ -63,7 +63,7 @@ selectElement.addEventListener('change', (event) => {
   else{
     day = '' + day;
   }
-  document.getElementById("julDate").innerHTML = `The Julian Date is : ${x.slice(2,4)}${day}`;
+  document.getElementById("julDate").innerHTML = `Julian Date: ${x.slice(2,4)}${day}`;
 });
 
 </script>
